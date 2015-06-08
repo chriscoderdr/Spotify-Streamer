@@ -26,7 +26,7 @@ public class Base extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initialize();
+        initialize(savedInstanceState);
     }
 
     @Nullable
@@ -40,7 +40,7 @@ public class Base extends Fragment {
     //========================================================
     //METHODS
     //========================================================
-    protected void initialize() {
+    protected void initialize(Bundle savedInstance) {
 
     }
 
