@@ -1,4 +1,4 @@
-package me.cristiangomez.spotifystreamer.app.ui.adapter;
+package me.cristiangomez.spotifystreamer.app.activity.listener;
 
 import android.widget.AbsListView;
 

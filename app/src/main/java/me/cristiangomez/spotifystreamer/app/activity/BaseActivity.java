@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by cristian on 07/06/15.
  */
-abstract class Base extends AppCompatActivity {
+abstract class BaseActivity extends AppCompatActivity {
     //========================================================
     //FIELDS
     //========================================================
@@ -34,6 +36,7 @@ abstract class Base extends AppCompatActivity {
             setContentView(getLayoutResource());
         }
         mFragmentManager = getSupportFragmentManager();
+        ButterKnife.inject(this);
     }
     //========================================================
     //INNER CLASSES

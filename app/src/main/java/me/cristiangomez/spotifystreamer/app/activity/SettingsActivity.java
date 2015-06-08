@@ -8,7 +8,7 @@ import me.cristiangomez.spotifystreamer.app.activity.fragment.SettingsFragment;
 /**
  * Created by cristian on 08/06/15.
  */
-public class SettingsActivity extends Base {
+public class SettingsActivity extends BaseActivity {
     //========================================================
     //FIELDS
     //========================================================

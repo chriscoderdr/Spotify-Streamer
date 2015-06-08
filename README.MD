@@ -12,3 +12,4 @@ It allow you to search tracks or filter by artist so you can find what you want 
 * [Okhttp 2.2](http://square.github.io/okhttp/)
 * [Spotify Web API for Android 0.1](https://github.com/kaaes/spotify-web-api-android)
 * [PreferenceFragment-Compat 0.1.1](https://github.com/Machinarius/PreferenceFragment-Compat)
+* [ButterKnife 6.1.0](https://github.com/JakeWharton/butterknife)

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginRight="@dimen/f_search_artist_margin_horizontal"
     android:layout_marginLeft="@dimen/f_search_artist_margin_horizontal">
-    <EditText
-        android:id="@+id/f_search_artist_et_artist"
+    <android.support.v7.widget.SearchView
+        android:id="@+id/f_search_artist_sv_artist"
         android:layout_marginTop="@dimen/f_search_artist_et_artist_margin_vertical"
         android:layout_marginBottom="@dimen/f_search_artist_et_artist_margin_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxLines="1"
+        app:iconifiedByDefault="false"
+        app:queryHint="@string/f_search_sv_artist_hint"
         />
     <ListView
         android:id="@+id/f_search_artist_lv_results"
