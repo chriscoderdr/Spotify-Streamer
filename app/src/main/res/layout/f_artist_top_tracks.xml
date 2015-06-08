@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="@dimen/f_artist_top_tracks_margin_horizontal"
+    android:layout_marginLeft="@dimen/f_artist_top_tracks_margin_horizontal">
+    <ListView
+        android:id="@+id/f_artist_top_tracks_lv_tracks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

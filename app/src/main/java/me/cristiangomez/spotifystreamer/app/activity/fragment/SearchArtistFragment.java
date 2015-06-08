@@ -1,6 +1,6 @@
 package me.cristiangomez.spotifystreamer.app.activity.fragment;
 
-import android.os.Bundle;
+import android.app.Activity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -9,12 +9,9 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-
-import kaaes.spotify.webapi.android.models.Artist;
 import kaaes.spotify.webapi.android.models.ArtistsPager;
-import kaaes.spotify.webapi.android.models.Pager;
 import me.cristiangomez.spotifystreamer.R;
+import me.cristiangomez.spotifystreamer.app.activity.listener.OnArtistSelectedListener;
 import me.cristiangomez.spotifystreamer.app.activity.listener.ArtistsFetcherListener;
 import me.cristiangomez.spotifystreamer.app.net.FetchArtistsTasks;
 import me.cristiangomez.spotifystreamer.app.pojo.ArtistSearch;
@@ -33,6 +30,7 @@ public class SearchArtistFragment extends Base {
     private EditText mSearch;
     private static final String cSCROLL_POSITION = "scroll_position";
     private static final String cLOG_TAG = SearchArtistFragment.class.getSimpleName();
+    private OnArtistSelectedListener mOnArtistSelectedListener;
     //========================================================
     //CONSTRUCTORS
     //========================================================
@@ -40,6 +38,18 @@ public class SearchArtistFragment extends Base {
     //========================================================
     //OVERRIDDEN METHODS
     //========================================================
+
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mOnArtistSelectedListener = (OnArtistSelectedListener) activity;
+        } catch (ClassCastException e) {
+            Log.d(cLOG_TAG, activity.getClass().getSimpleName()+
+            " Should implement "+OnArtistSelectedListener.class.getSimpleName());
+        }
+    }
 
     @Override
     protected int getLayoutResource() {
@@ -54,7 +64,8 @@ public class SearchArtistFragment extends Base {
         mResultsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                String artistId = mArtistAdapter.getItem(position).id;
+                mOnArtistSelectedListener.onArtistSelected(mArtistAdapter.getItem(position));
+
             }
         });
         mResultsListView.setOnScrollListener(new OnEndlessScrollListener() {

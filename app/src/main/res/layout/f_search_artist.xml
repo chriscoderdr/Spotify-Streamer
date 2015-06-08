@@ -6,8 +6,8 @@
     android:layout_marginLeft="@dimen/f_search_artist_margin_horizontal">
     <EditText
         android:id="@+id/f_search_artist_et_artist"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="@dimen/f_search_artist_et_artist_margin_vertical"
+        android:layout_marginBottom="@dimen/f_search_artist_et_artist_margin_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLines="1"
