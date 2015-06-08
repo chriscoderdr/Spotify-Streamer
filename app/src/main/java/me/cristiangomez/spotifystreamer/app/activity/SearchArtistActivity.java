@@ -6,8 +6,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import kaaes.spotify.webapi.android.SpotifyApi;
-import kaaes.spotify.webapi.android.SpotifyService;
 import kaaes.spotify.webapi.android.models.Artist;
 import me.cristiangomez.spotifystreamer.R;
 import me.cristiangomez.spotifystreamer.app.activity.fragment.SearchArtistFragment;
@@ -16,7 +14,7 @@ import me.cristiangomez.spotifystreamer.app.activity.listener.OnArtistSelectedLi
 /**
  * Created by cristian on 07/06/15.
  */
-public class SearchArtistActivity extends Base implements OnArtistSelectedListener {
+public class SearchArtistActivity extends BaseActivity implements OnArtistSelectedListener {
     //========================================================
     //FIELDS
     //========================================================

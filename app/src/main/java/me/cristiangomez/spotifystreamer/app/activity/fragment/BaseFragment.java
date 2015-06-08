@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by cristian on 07/06/15.
  */
-public class Base extends Fragment {
+public class BaseFragment extends android.support.v4.app.Fragment {
     //========================================================
     //FIELDS
     //========================================================
@@ -41,11 +43,10 @@ public class Base extends Fragment {
     //METHODS
     //========================================================
     protected void initialize(Bundle savedInstance) {
-
     }
 
     protected void initializeView(View view) {
-
+        ButterKnife.inject(this, view);
     }
 
     //========================================================

@@ -8,12 +8,11 @@ import android.view.MenuItem;
 
 import me.cristiangomez.spotifystreamer.R;
 import me.cristiangomez.spotifystreamer.app.activity.fragment.ArtistTopTracksFragment;
-import me.cristiangomez.spotifystreamer.app.activity.fragment.SearchArtistFragment;
 
 /**
  * Created by cristian on 07/06/15.
  */
-public class ArtistTopTracksActivity extends Base {
+public class ArtistTopTracksActivity extends BaseActivity {
     //========================================================
     //FIELDS
     //========================================================
