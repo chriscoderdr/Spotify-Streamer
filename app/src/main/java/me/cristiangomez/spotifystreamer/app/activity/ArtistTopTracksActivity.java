@@ -1,6 +1,10 @@
 package me.cristiangomez.spotifystreamer.app.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import me.cristiangomez.spotifystreamer.R;
 import me.cristiangomez.spotifystreamer.app.activity.fragment.ArtistTopTracksFragment;
@@ -36,6 +40,24 @@ public class ArtistTopTracksActivity extends Base {
         if (savedInstance == null) {
             showSearchArtistFragment();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.a_artist_top_tracks, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.a_artist_top_tracks_menu_setting:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     //========================================================

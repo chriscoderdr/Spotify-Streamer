@@ -47,7 +47,7 @@ public class FetchArtistTopTracksTasks extends AsyncTask<ArtistTopTracksQuery, V
         try {
             return mSpotifyService.getArtistTopTrack(params[0].getArtistId(), values);
         } catch (RetrofitError e) {
-            Log.d(cLOG_TAG, "error downloading artists", e);
+            Log.e(cLOG_TAG, "error downloading artists", e);
         }
         return null;
     }

@@ -2,6 +2,9 @@ package me.cristiangomez.spotifystreamer.app.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import kaaes.spotify.webapi.android.SpotifyApi;
 import kaaes.spotify.webapi.android.SpotifyService;
@@ -43,6 +46,24 @@ public class SearchArtistActivity extends Base implements OnArtistSelectedListen
         Intent intent = new Intent(this, ArtistTopTracksActivity.class);
         intent.putExtra(ArtistTopTracksActivity.cARGS_ARTIST_ID, artist.id);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.a_search_artist, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.a_search_artist_menu_settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     //========================================================

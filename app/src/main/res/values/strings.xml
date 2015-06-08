@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">Spotify Streamer</string>
+    <string name="app_name" translatable="false">Spotify Streamer</string>
     <string name="no_artist_found">No artist found with this search</string>
     <string name="no_top_tracks_found">No top tracks found for the selected artist</string>
     <string name="a_artist_top_tracks_label">TOP 10 TRACKS</string>
+    <string name="default_country" translatable="false">US</string>
+    <string name="preferences_country_key" translatable="false">preferences_country</string>
+    <string name="prefrence_country_title">Country</string>
+    <string name="settings">Settings</string>
 </resources>
