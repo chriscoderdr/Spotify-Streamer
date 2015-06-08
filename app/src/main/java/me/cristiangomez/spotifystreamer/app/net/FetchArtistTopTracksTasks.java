@@ -55,7 +55,9 @@ public class FetchArtistTopTracksTasks extends AsyncTask<ArtistTopTracksQuery, V
     @Override
     protected void onPostExecute(Tracks tracks) {
         super.onPostExecute(tracks);
-        mListener.onArtistTopTracksFetched(tracks);
+        if (mListener != null) {
+            mListener.onArtistTopTracksFetched(tracks);
+        }
     }
 
     //========================================================
