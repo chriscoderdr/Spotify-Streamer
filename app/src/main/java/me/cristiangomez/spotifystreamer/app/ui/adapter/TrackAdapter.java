@@ -66,7 +66,7 @@ public class TrackAdapter extends BaseAdapter {
             Picasso.with(mContext).load(R.drawable.track_placeholder).into(holder.image
             );
         }
-        holder.name.setText(track.name);
+        holder.name.setText(track.name+"\n"+track.album.name);
         return rowView;
     }
 
