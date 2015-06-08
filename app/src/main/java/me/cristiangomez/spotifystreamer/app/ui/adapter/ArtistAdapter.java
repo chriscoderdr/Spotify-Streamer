@@ -1,7 +1,6 @@
 package me.cristiangomez.spotifystreamer.app.ui.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,8 +74,8 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements Filterable {
         ImageView image;
         TextView name;
         public ArtistViewHolder (View view) {
-            image = (ImageView) view.findViewById(R.id.artist_list_item_image);
-            name = (TextView) view.findViewById(R.id.artist_list_item_name);
+            image = (ImageView) view.findViewById(R.id.artist_list_item_iv_image);
+            name = (TextView) view.findViewById(R.id.artist_list_item_tv_name);
         }
     }
     //========================================================

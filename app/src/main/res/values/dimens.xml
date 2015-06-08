@@ -3,4 +3,12 @@
     <dimen name="f_search_artist_margin_horizontal">16dp</dimen>
     <dimen name="f_search_artist_et_artist_margin_vertical">24dp</dimen>
     <dimen name="f_artist_top_tracks_margin_horizontal">16dp</dimen>
+    <dimen name="track_list_item_tv_name_margin_left">16dp</dimen>
+    <dimen name="track_list_item_iv_image_height">100dp</dimen>
+    <dimen name="track_list_item_iv_image_width">100dp</dimen>
+    <dimen name="track_list_item_padding_vertical">24dp</dimen>
+    <dimen name="artist_list_item_tv_name_margin_left">16dp</dimen>
+    <dimen name="artist_list_item_iv_image_height">100dp</dimen>
+    <dimen name="artist_list_item_iv_image_width">100dp</dimen>
+    <dimen name="artist_list_item_padding_vertical">24dp</dimen>
 </resources>

@@ -4,22 +4,16 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import kaaes.spotify.webapi.android.models.Image;
 import kaaes.spotify.webapi.android.models.Track;
-import kaaes.spotify.webapi.android.models.Tracks;
-import kaaes.spotify.webapi.android.models.TracksPager;
 import me.cristiangomez.spotifystreamer.R;
 
 /**
@@ -108,8 +102,8 @@ public class TrackAdapter extends BaseAdapter {
         ImageView image;
         TextView name;
         public TrackViewHolder(View view) {
-            image = (ImageView) view.findViewById(R.id.track_list_item_image);
-            name = (TextView) view.findViewById(R.id.track_list_item_name);
+            image = (ImageView) view.findViewById(R.id.track_list_item_iv_image);
+            name = (TextView) view.findViewById(R.id.track_list_item_tv_name);
         }
     }
     //========================================================

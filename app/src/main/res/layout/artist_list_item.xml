@@ -2,19 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="24dp"
-    android:paddingBottom="24dp">
+    android:paddingTop="@dimen/artist_list_item_padding_vertical"
+    android:paddingBottom="@dimen/artist_list_item_padding_vertical">
     <ImageView
-        android:id="@+id/artist_list_item_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/artist_list_item_iv_image"
+        android:layout_width="@dimen/artist_list_item_iv_image_width"
+        android:layout_height="@dimen/artist_list_item_iv_image_height"
         android:scaleType="centerInside"
         />
     <TextView
-        android:id="@+id/artist_list_item_name"
+        android:id="@+id/artist_list_item_tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="@dimen/artist_list_item_tv_name_margin_left"
         android:layout_gravity="center_vertical"
         />
 </LinearLayout>
