@@ -1,4 +1,4 @@
-package me.cristiangome.spotifystreamer;
+package me.cristiangomez.spotifystreamer;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
