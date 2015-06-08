@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import kaaes.spotify.webapi.android.models.Image;
 import kaaes.spotify.webapi.android.models.Track;
@@ -22,16 +25,19 @@ import me.cristiangomez.spotifystreamer.R;
 /**
  * Created by cristian on 07/06/15.
  */
-public class TrackAdapter extends ArrayAdapter<Track>  {
+public class TrackAdapter extends BaseAdapter {
     //========================================================
     //FIELDS
     //========================================================
     private static final String cLOG_TAG = TrackAdapter.class.getSimpleName();
+    private List<Track> mTracks;
+    private Context mContext;
     //========================================================
     //CONSTRUCTORS
     //========================================================
-    public TrackAdapter(Context context) {
-        super(context, R.layout.track_list_item, new ArrayList<Track>());
+    public TrackAdapter(Context context, List<Track> tracks) {
+        mTracks = tracks;
+        mContext = context;
     }
     //========================================================
     //OVERRIDDEN METHODS
@@ -60,16 +66,36 @@ public class TrackAdapter extends ArrayAdapter<Track>  {
             if (previewImage == null) {
                 previewImage = track.album.images.get(0).url;
             }
-            Picasso.with(getContext()).load(previewImage).into(holder.image);
+            Picasso.with(mContext).load(previewImage).into(holder.image);
         }
         else {
-            Picasso.with(getContext()).load(R.drawable.track_placeholder).into(holder.image
+            Picasso.with(mContext).load(R.drawable.track_placeholder).into(holder.image
             );
         }
         holder.name.setText(track.name);
         return rowView;
     }
 
+
+
+    public Track getItem(int position) {
+        return mTracks.get(position);
+    }
+
+    @Override
+    public int getCount() {
+        return mTracks.size();
+    }
+
+    public void addAll(List<Track> tracks) {
+        mTracks.addAll(tracks);
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
     //========================================================
     //METHODS
@@ -89,5 +115,7 @@ public class TrackAdapter extends ArrayAdapter<Track>  {
     //========================================================
     //GETTERS AND SETTERS
     //========================================================
-
+    public List<Track> getTracks() {
+        return mTracks;
+    }
 }
