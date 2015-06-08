@@ -15,8 +15,10 @@
             </activity>
         <activity android:name=".app.activity.ArtistTopTracksActivity"
             android:label="@string/a_artist_top_tracks_label"
+            android:parentActivityName=".app.activity.SearchArtistActivity"
             />
         <activity android:name=".app.activity.SettingsActivity"
+            android:parentActivityName=".app.activity.SearchArtistActivity"
             android:label="@string/app_name"
             />
     </application>
