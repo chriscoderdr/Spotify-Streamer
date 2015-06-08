@@ -1,22 +1,20 @@
 package me.cristiangomez.spotifystreamer.app.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import kaaes.spotify.webapi.android.SpotifyApi;
-import kaaes.spotify.webapi.android.SpotifyService;
-import kaaes.spotify.webapi.android.models.Artist;
 import me.cristiangomez.spotifystreamer.R;
+import me.cristiangomez.spotifystreamer.app.activity.fragment.ArtistTopTracksFragment;
 import me.cristiangomez.spotifystreamer.app.activity.fragment.SearchArtistFragment;
-import me.cristiangomez.spotifystreamer.app.activity.listener.OnArtistSelectedListener;
 
 /**
  * Created by cristian on 07/06/15.
  */
-public class SearchArtistActivity extends Base implements OnArtistSelectedListener {
+public class ArtistTopTracksActivity extends Base {
     //========================================================
     //FIELDS
     //========================================================
+    public static final String cARGS_ARTIST_ID = "ARTIST_ID";
+    private String mArtistId;
     //========================================================
     //CONSTRUCTORS
     //========================================================
@@ -27,30 +25,28 @@ public class SearchArtistActivity extends Base implements OnArtistSelectedListen
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.a_search_artist;
+        return R.layout.a_artist_top_tracks;
     }
 
     @Override
     protected void initialize(Bundle savedInstance) {
         super.initialize(savedInstance);
+        Bundle args = getIntent().getExtras();
+        mArtistId = args.getString(cARGS_ARTIST_ID);
         if (savedInstance == null) {
             showSearchArtistFragment();
         }
-    }
-
-    @Override
-    public void onArtistSelected(Artist artist) {
-        Intent intent = new Intent(this, ArtistTopTracksActivity.class);
-        intent.putExtra(ArtistTopTracksActivity.cARGS_ARTIST_ID, artist.id);
-        startActivity(intent);
     }
 
     //========================================================
     //METHODS
     //========================================================
     public void showSearchArtistFragment() {
-        SearchArtistFragment fragment = new SearchArtistFragment();
-        mFragmentManager.beginTransaction().add(R.id.a_search_artist_container,
+        ArtistTopTracksFragment fragment = new ArtistTopTracksFragment();
+        Bundle args = new Bundle();
+        args.putString(ArtistTopTracksFragment.cARGS_ARTIST_ID, mArtistId);
+        fragment.setArguments(args);
+        mFragmentManager.beginTransaction().add(R.id.a_artist_top_tracks_container,
                 fragment).commit();
     }
     //========================================================

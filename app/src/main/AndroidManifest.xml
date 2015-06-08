@@ -12,6 +12,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             </activity>
+        <activity android:name=".app.activity.ArtistTopTracksActivity"
+            android:label="@string/a_artist_top_tracks_label"
+            />
     </application>
 
 </manifest>
