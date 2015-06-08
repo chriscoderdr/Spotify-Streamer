@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/a_artist_top_tracks_menu_setting"
+        android:title="@string/settings"
+        />
+</menu>

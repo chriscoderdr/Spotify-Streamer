@@ -19,6 +19,7 @@ import me.cristiangomez.spotifystreamer.app.activity.listener.ArtistTopTracksFet
 import me.cristiangomez.spotifystreamer.app.net.FetchArtistTopTracksTasks;
 import me.cristiangomez.spotifystreamer.app.pojo.ArtistTopTracksQuery;
 import me.cristiangomez.spotifystreamer.app.ui.adapter.TrackAdapter;
+import me.cristiangomez.spotifystreamer.app.util.SharedPreferencesController;
 
 /**
  * Created by cristian on 07/06/15.
@@ -38,6 +39,7 @@ public class ArtistTopTracksFragment extends Base {
     private int mIndex;
     private int mTop;
     private Gson mGson;
+    private SharedPreferencesController mPreferencesController;
     //========================================================
     //CONSTRUCTORS
     //========================================================
@@ -55,7 +57,7 @@ public class ArtistTopTracksFragment extends Base {
     protected void initializeView(View view) {
         mTracksListView = (ListView) view.findViewById(R.id.f_artist_top_tracks_lv_tracks);
         if (mTrackList == null) {
-            ArtistTopTracksQuery query = new ArtistTopTracksQuery(mArtistId, "US");
+            ArtistTopTracksQuery query = new ArtistTopTracksQuery(mArtistId, mPreferencesController.getCountry());
             new FetchArtistTopTracksTasks(new ArtistTopTracksFetcherListener() {
                 @Override
                 public void onArtistTopTracksFetched(Tracks tracks) {
@@ -88,6 +90,7 @@ public class ArtistTopTracksFragment extends Base {
             mIndex = savedInstance.getInt(cINDEX);
             mTop = savedInstance.getInt(cTOP_POSITION);
         }
+        mPreferencesController = SharedPreferencesController.getsInstance();
     }
 
     @Override
