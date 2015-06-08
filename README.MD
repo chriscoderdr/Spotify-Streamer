@@ -11,4 +11,4 @@ It allow you to search tracks or filter by artist so you can find what you want 
 * [Retrofit 1.9](http://square.github.io/retrofit/)
 * [Okhttp 2.2](http://square.github.io/okhttp/)
 * [Spotify Web API for Android 0.1](https://github.com/kaaes/spotify-web-api-android)
-* [PreferenceFragment-Compat](https://github.com/Machinarius/PreferenceFragment-Compat)
+* [PreferenceFragment-Compat 0.1.1](https://github.com/Machinarius/PreferenceFragment-Compat)
