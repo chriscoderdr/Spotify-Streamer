@@ -4,5 +4,10 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
+    
+    <style name="ArtistSearchView" parent="Widget.AppCompat.Light.SearchView">
+        <item name="searchIcon">@android:color/transparent</item>
+        <item name="searchHintIcon">@android:color/transparent</item>
+    </style>
 
 </resources>

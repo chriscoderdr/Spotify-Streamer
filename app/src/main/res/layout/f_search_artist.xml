@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         app:iconifiedByDefault="false"
         app:queryHint="@string/f_search_sv_artist_hint"
+        style="@style/ArtistSearchView"
         />
     <ListView
         android:id="@+id/f_search_artist_lv_results"
