@@ -51,7 +51,7 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements Filterable {
 
         ArtistViewHolder holder = (ArtistViewHolder) rowView.getTag();
         Artist artist = getItem(position);
-        if (!artist.images.isEmpty()) {
+        if (artist.images != null && !artist.images.isEmpty()) {
             Picasso.with(getContext()).load(artist.images.get(0).url).into(holder.image);
         }
         else {

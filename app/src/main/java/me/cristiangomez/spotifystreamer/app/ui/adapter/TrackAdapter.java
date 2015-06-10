@@ -49,7 +49,7 @@ public class TrackAdapter extends BaseAdapter {
 
         TrackViewHolder holder = (TrackViewHolder) rowView.getTag();
         Track track = getItem(position);
-        if (!track.album.images.isEmpty()) {
+        if (track.album.images != null && !track.album.images.isEmpty()) {
             String previewImage = null;
             for (Image image: track.album.images) {
                 if (image.height == 200) {
