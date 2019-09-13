@@ -27,5 +27,5 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile(name:'spotify-web-api-android-0.1.0', ext:'aar')
     compile 'com.github.machinarius:preferencefragment:0.1.2'
-    compile 'com.jakewharton:butterknife:10.1.0'
+    compile 'com.jakewharton:butterknife:10.2.0'
 }
